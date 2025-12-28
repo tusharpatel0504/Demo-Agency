@@ -35,12 +35,14 @@ const HomePage = () => {
         </section>
 
         {/* Services */}
-        <div className="hidden lg:block">
+        <section id='services'>
+          <div className="hidden lg:block">
           <StickyCards />
         </div>
-       <div className="lg:hidden">
-  <OurServices />
-</div>
+        <div className="lg:hidden">
+          <OurServices />
+        </div>
+        </section>
 
 
         {/* Projects */}

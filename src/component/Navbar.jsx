@@ -79,7 +79,7 @@ export default function Navbar() {
         {/* Desktop Links */}
         <ul className="hidden md:flex gap-8 text-sm text-gray-300">
           <li
-            onClick={() => scrollToSection("stats")}
+            onClick={() => scrollToSection("services")}
             className="hover:text-white font-semibold cursor-pointer transition glow-text"
           >
             Services

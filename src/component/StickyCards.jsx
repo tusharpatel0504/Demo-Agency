@@ -117,7 +117,7 @@ export default function StickyCards() {
 
   return (
     <main className="bg-black text-white">
-      <section className="sticky-section h-screen flex items-center justify-center relative">
+      <section id="services" className="sticky-section h-screen flex items-center justify-center relative">
         <h1
           ref={stickyHeaderRef}
           className="absolute top-[18%] text-6xl italic font-light opacity-0 glow-text"
