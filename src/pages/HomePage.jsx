@@ -52,10 +52,18 @@ const HomePage = () => {
               </GotBackground>
             </div>
           </section>
-          <StickyCards />
-          <Project />
-          <Testimonial/>
-          <Contact/>
+          <div id="stats">
+            <StickyCards />
+          </div>
+          <div id="projects">
+            <Project />
+          </div>
+          <div id="testimonials">
+            <Testimonial/>
+          </div>
+          <div id="contact">
+            <Contact/>
+          </div>
         </div>
       </div>
     </div>

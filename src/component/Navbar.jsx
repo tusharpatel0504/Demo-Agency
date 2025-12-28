@@ -43,6 +43,20 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 100; // Offset for fixed navbar
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
     <nav
       style={style}
@@ -57,25 +71,40 @@ export default function Navbar() {
     >
       <div className="flex items-center justify-between gap-10">
         {/* Logo */}
-        <div className="text-lg text-white italic font-semibold nav-glow">
+        <button 
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="text-lg text-white italic font-semibold nav-glow cursor-pointer hover:opacity-80 transition-opacity"
+        >
           Tushar.
-        </div>
+        </button>
 
         {/* Nav Links */}
         <ul className="hidden md:flex gap-8 text-sm text-gray-300">
-          <li className="hover:text-white nav-glow font-semibold glow-text">
+          <li 
+            onClick={() => scrollToSection("stats")}
+            className="hover:text-white nav-glow font-semibold glow-text cursor-pointer transition-colors"
+          >
             Services
           </li>
-          <li className="hover:text-white nav-glow font-semibold glow-text">
+          <li 
+            onClick={() => scrollToSection("projects")}
+            className="hover:text-white nav-glow font-semibold glow-text cursor-pointer transition-colors"
+          >
             Featured Work
           </li>
-          <li className="hover:text-white nav-glow font-semibold glow-text">
+          <li 
+            onClick={() => scrollToSection("testimonials")}
+            className="hover:text-white nav-glow font-semibold glow-text cursor-pointer transition-colors"
+          >
             Reviews
           </li>
         </ul>
 
         {/* CTA */}
-        <button className="bg-white text-black text-sm px-4 py-2 rounded-lg">
+        <button 
+          onClick={() => scrollToSection("contact")}
+          className="bg-white text-black text-sm px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"
+        >
           Get In Touch
         </button>
       </div>
