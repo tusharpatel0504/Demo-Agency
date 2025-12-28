@@ -32,6 +32,12 @@ body {
   .rotate-y-180 {
     transform: rotateY(180deg);
   }
+  .hero-wrapper {
+  position: sticky;
+  top: 12px;
+  padding: clamp(0px, 4vw, 48px);
+}
+
 
   .glow-text {
     text-shadow:

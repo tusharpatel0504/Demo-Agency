@@ -42,7 +42,7 @@ const themeStyles = {
 
 const OurServices = () => {
   return (
-    <section className="bg-black text-white pb-20 pt-72 sm:py-28 overflow-hidden">
+    <section className="bg-black text-white pb-20 pt-96 sm:py-28 overflow-hidden">
       {/* ================= HEADING (ALWAYS ON TOP) ================= */}
       <div className="text-center mb-14 sm:mb-20 px-4 relative z-20">
         <h2 className="text-3xl sm:text-5xl lg:text-6xl italic font-light">
