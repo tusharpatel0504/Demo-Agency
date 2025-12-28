@@ -7,6 +7,7 @@ import Stats from '../component/Stats'
 import StickyCards from '../component/StickyCards'
 import Project from '../component/Project'
 import Testimonial from '../component/Testimonial'
+import Contact from '../component/Contact'
 // import ScrollSection from '../component/ScrollSection'
 
 
@@ -54,6 +55,7 @@ const HomePage = () => {
           <StickyCards />
           <Project />
           <Testimonial/>
+          <Contact/>
         </div>
       </div>
     </div>

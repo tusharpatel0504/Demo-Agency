@@ -13,9 +13,9 @@ const Stats = () => {
               Years of Experience
             </h4>
             <p className="text-sm leading-relaxed text-neutral-400">
-              We've spent years solving complex product, design, and marketing
-              challenges. From startups to global teams, our experience lets us
-              move fast and build what truly matters.
+              Over six years of building, shipping, and refining digital
+              products. I’ve worked end-to-end across design, development, and
+              strategy — focusing on clarity, performance, and real outcomes.
             </p>
           </div>
         </div>
@@ -26,16 +26,16 @@ const Stats = () => {
         {/* Stat 2 */}
         <div className="flex flex-1 gap-6">
           <div className="text-7xl font-light text-neutral-300 leading-none">
-            70+
+            10+
           </div>
           <div>
             <h4 className="mb-3 text-lg font-medium text-white">
               Projects Delivered
             </h4>
             <p className="text-sm leading-relaxed text-neutral-400">
-              We've shaped products that perform and scale, delivering
-              everything from MVPs to enterprise platforms with clarity, speed,
-              and intent.
+              From fast MVPs to polished production builds, I’ve delivered
+              projects that scale, ship on time, and solve real problems — not
+              just look good.
             </p>
           </div>
         </div>
@@ -46,16 +46,16 @@ const Stats = () => {
         {/* Stat 3 */}
         <div className="flex flex-1 gap-6">
           <div className="text-7xl font-light text-neutral-300 leading-none">
-            18+
+            4+
           </div>
           <div>
             <h4 className="mb-3 text-lg font-medium text-white">
               Industries Impacted
             </h4>
             <p className="text-sm leading-relaxed text-neutral-400">
-              Working across industries like AI, finance, fintech, fashion,
-              gaming, education, and manufacturing, we bring fresh thinking by
-              cross-pollinating ideas in every project.
+              I’ve worked across AI, fintech, fashion, gaming, education, and
+              manufacturing — bringing insights from different domains to build
+              smarter, more adaptable products.
             </p>
           </div>
         </div>
