@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Outfit:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.nav-glow {
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.12);
+}
+
+
+
+body {
+  background-color: black;
+  font-family: "Outfit", sans-serif;
+}
+
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  .glow-text {
+    text-shadow:
+      0 0 12px rgba(255, 255, 255, 0.15),
+      0 0 32px rgba(255, 255, 255, 0.08);
+  }
+}
+
+
+
+@layer utilities {
+  .glow-text {
+    text-shadow:
+      0 0 12px rgba(255, 255, 255, 0.15),
+      0 0 32px rgba(255, 255, 255, 0.08);
+  }
+} 
