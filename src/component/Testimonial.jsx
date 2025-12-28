@@ -76,7 +76,7 @@ const Testimonial = () => {
     <section className="bg-black text-white py-32 relative overflow-hidden">
       {/* Heading */}
       <div className="text-center mb-20">
-        <h2 className="text-6xl font-serif">
+        <h2 className="text-6xl italic font-light">
           Hear <span className="italic">from</span> our partners
         </h2>
         <p className="text-gray-400 mt-3">
@@ -160,7 +160,7 @@ const Testimonial = () => {
       {/* Extreme Left Arrow */}
       <button
         onClick={() => paginate(-1)}
-        className="fixed left-6 md:left-10 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition"
+        className="absolute left-6 md:left-10 top-[60%] -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition"
       >
         ←
       </button>
@@ -168,7 +168,7 @@ const Testimonial = () => {
       {/* Extreme Right Arrow */}
       <button
         onClick={() => paginate(1)}
-        className="fixed right-6 md:right-10 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition"
+        className="absolute right-6 md:right-10 top-[60%] -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition"
       >
         →
       </button>
