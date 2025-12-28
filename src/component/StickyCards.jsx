@@ -132,7 +132,7 @@ export default function StickyCards() {
          <Card
   id="card-1"
   img="/PrimaryLeft.png"
-  title="Web Development"
+  title="Website development"
   desc="High-performance, scalable websites built with modern technologies, tailored to your business goals."
   color="bg-neutral-300 text-black"
 />
@@ -140,7 +140,7 @@ export default function StickyCards() {
 <Card
   id="card-2"
   img="/PrimaryC.png"
-  title="App Development"
+  title="Mobile app development"
   desc="End-to-end mobile and web application development, from concept to deployment and scaling."
   color="bg-red-700 text-white"
 />
@@ -148,7 +148,7 @@ export default function StickyCards() {
 <Card
   id="card-3"
   img="/primaryR.png"
-  title="UI / UX Design"
+  title="Custom technical solutions for clients"
   desc="Intuitive, user-centric design experiences that balance aesthetics, usability, and conversion."
   color="bg-neutral-900 text-white"
 />
