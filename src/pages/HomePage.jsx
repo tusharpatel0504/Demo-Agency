@@ -5,6 +5,8 @@ import GotBackground from '../component/GotBackground'
 import ScrollLitHeading from '../component/ScrollLitHeading'
 import Stats from '../component/Stats'
 import StickyCards from '../component/StickyCards'
+import Project from '../component/Project'
+import Testimonial from '../component/Testimonial'
 // import ScrollSection from '../component/ScrollSection'
 
 
@@ -27,30 +29,31 @@ const HomePage = () => {
 
   return (
     <div className='m-3'>
-      <NoiseBackground/>
+      <NoiseBackground />
       <div className='relative'>
         <div className='sticky top-0'>
-          <div 
-            style={{ 
+          <div
+            style={{
               marginTop: `${margin}px`,
               marginLeft: `${margin}px`,
               marginRight: `${margin}px`,
               transition: 'margin 0.1s ease-out'
             }}
           >
-            <Hero/>
+            <Hero />
           </div>
         </div>
         <div className='relative z-10'>
-         <section ref={sectionRef} className="relative h-[400vh]">
-        <div className="sticky top-0 h-screen">
-          <GotBackground>
-            <ScrollLitHeading sectionRef={sectionRef} />
-          </GotBackground>
-        </div>
-      </section>
-     <StickyCards/>
-
+          <section ref={sectionRef} className="relative h-[400vh]">
+            <div className="sticky top-0 h-screen">
+              <GotBackground>
+                <ScrollLitHeading sectionRef={sectionRef} />
+              </GotBackground>
+            </div>
+          </section>
+          <StickyCards />
+          <Project />
+          <Testimonial/>
         </div>
       </div>
     </div>
