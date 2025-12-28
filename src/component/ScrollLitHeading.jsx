@@ -11,22 +11,26 @@ export default function ScrollLitHeading({ sectionRef }) {
 
   return (
     <motion.h1
-      className="
-        max-w-6xl
-        text-center
-        text-4xl
-        md:text-5xl
-        lg:text-6xl
-        italic
-        tracking-wide
-        leading-tight
-        flex
-        flex-wrap
-        justify-center
-        pb-16
-        pt-20
-      "
-    >
+  className="
+    max-w-6xl
+    text-center
+    text-2xl
+    sm:text-3xl
+    md:text-4xl
+    lg:text-5xl
+    xl:text-6xl
+    italic
+    tracking-wide
+    leading-snug
+    md:leading-tight
+    flex
+    flex-wrap
+    justify-center
+    pb-16
+    pt-20
+  "
+>
+
       {text.split("").map((char, i, arr) => {
         const color = useTransform(
           scrollYProgress,

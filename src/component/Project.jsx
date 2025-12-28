@@ -52,7 +52,7 @@ const Project = () => {
       {/* Header */}
       <div className="text-center mb-14 sm:mb-20">
         <h1 className="text-3xl sm:text-5xl lg:text-6xl italic font-light mb-4 glow-text">
-        Our projects
+          Our projects
         </h1>
         <p className="text-gray-400 max-w-xl mx-auto text-sm sm:text-base glow-text">
           We help you achieve more at every stage of business growth
@@ -73,8 +73,35 @@ const Project = () => {
               items-start
             "
           >
-            {/* Left */}
-            <div>
+            {/* Image – FIRST on mobile */}
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                order-1 lg:order-3
+                w-full
+                max-w-md
+                lg:w-96
+                mx-auto
+                rounded-xl
+                overflow-hidden
+                transition-transform duration-700
+                ease-[cubic-bezier(0.16,1,0.3,1)]
+                group-hover:scale-105
+                group-hover:-translate-y-1
+                group-hover:shadow-2xl
+              "
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="h-full w-full object-cover"
+              />
+            </a>
+
+            {/* Left – Text */}
+            <div className="order-2 lg:order-1">
               <span className="text-gray-500 block mb-3 text-sm">
                 {project.id}
               </span>
@@ -110,7 +137,7 @@ const Project = () => {
             </div>
 
             {/* Middle – Tech Stack */}
-            <div className="lg:pt-12">
+            <div className="order-3 lg:order-2 lg:pt-12">
               <h4 className="text-xs sm:text-sm uppercase tracking-widest text-gray-500 mb-4">
                 Tech Stack
               </h4>
@@ -133,32 +160,6 @@ const Project = () => {
                 ))}
               </ul>
             </div>
-
-            {/* Right – Image */}
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                w-full
-                max-w-md
-                lg:w-96
-                mx-auto
-                rounded-xl
-                overflow-hidden
-                transition-transform duration-700
-                ease-[cubic-bezier(0.16,1,0.3,1)]
-                group-hover:scale-105
-                group-hover:-translate-y-1
-                group-hover:shadow-2xl
-              "
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="h-full w-full object-cover"
-              />
-            </a>
           </div>
 
           {/* Divider */}

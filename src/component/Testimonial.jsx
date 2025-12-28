@@ -137,41 +137,45 @@ const Testimonial = () => {
       <button
         onClick={() => paginate(-1)}
         className="
-          absolute left-3 sm:left-6 lg:left-10
-          top-[60%] -translate-y-1/2
-          z-50
-          flex items-center justify-center
-          w-10 h-10 sm:w-12 sm:h-12
-          rounded-full
-          bg-white/10 backdrop-blur-xl
-          border border-white/20
-          hover:bg-white/20
-          active:scale-95
-          transition
-        "
+    hidden sm:flex
+    absolute left-3 sm:left-6 lg:left-10
+    top-[60%] -translate-y-1/2
+    z-50
+    items-center justify-center
+    w-10 h-10 sm:w-12 sm:h-12
+    rounded-full
+    bg-white/10 backdrop-blur-xl
+    border border-white/20
+    hover:bg-white/20
+    active:scale-95
+    transition
+  "
       >
         ←
       </button>
+
 
       {/* Right Arrow */}
       <button
         onClick={() => paginate(1)}
         className="
-          absolute right-3 sm:right-6 lg:right-10
-          top-[60%] -translate-y-1/2
-          z-50
-          flex items-center justify-center
-          w-10 h-10 sm:w-12 sm:h-12
-          rounded-full
-          bg-white/10 backdrop-blur-xl
-          border border-white/20
-          hover:bg-white/20
-          active:scale-95
-          transition
-        "
+    hidden sm:flex
+    absolute right-3 sm:right-6 lg:right-10
+    top-[60%] -translate-y-1/2
+    z-50
+    items-center justify-center
+    w-10 h-10 sm:w-12 sm:h-12
+    rounded-full
+    bg-white/10 backdrop-blur-xl
+    border border-white/20
+    hover:bg-white/20
+    active:scale-95
+    transition
+  "
       >
         →
       </button>
+
     </section>
   );
 };

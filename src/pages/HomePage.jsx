@@ -38,9 +38,10 @@ const HomePage = () => {
         <div className="hidden lg:block">
           <StickyCards />
         </div>
-        <div className="lg:hidden">
-          <OurServices />
-        </div>
+       <div className="lg:hidden">
+  <OurServices />
+</div>
+
 
         {/* Projects */}
         <section id="projects">
