@@ -2,6 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 .nav-glow {
   text-shadow: 0 0 6px rgba(255, 255, 255, 0.12);
 }
@@ -34,17 +35,13 @@ body {
 
   .glow-text {
     text-shadow:
-      0 0 12px rgba(255, 255, 255, 0.15),
-      0 0 32px rgba(255, 255, 255, 0.08);
+      0 0 8px rgba(255, 255, 255, 0.4),
+      0 0 24px rgba(255, 255, 255, 0.3),
+      0 0 48px rgba(255, 255, 255, 0.2),
+      0 0 96px rgba(255, 255, 255, 0.1);
   }
 }
 
 
 
-@layer utilities {
-  .glow-text {
-    text-shadow:
-      0 0 12px rgba(255, 255, 255, 0.15),
-      0 0 32px rgba(255, 255, 255, 0.08);
-  }
-} 
+@layer utilities {}

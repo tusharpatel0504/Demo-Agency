@@ -22,39 +22,15 @@ const testimonials = [
     name: "Ananya Mehta",
     role: "Marketing Head, D2C Brands",
     quote:
-      "We’ve worked with multiple teams before, but this experience was different. Strategic, creative, and deeply invested in outcomes — not just deliverables.",
+      "Strategic, creative, and deeply invested in outcomes — not just deliverables. A partnership that truly felt collaborative.",
     image:
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800",
   },
-  {
-    name: "Kunal Verma",
-    role: "Product Lead, Fintech Startup",
-    quote:
-      "The attention to detail and ownership mindset really impressed us. It felt less like an external partnership and more like an in-house extension of our team.",
-    image:
-      "https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=800",
-  },
-  {
-    name: "Priya Nair",
-    role: "Founder, Wellness & Lifestyle Brand",
-    quote:
-      "From ideation to execution, everything was seamless. They understood our brand voice instantly and helped us scale with confidence.",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800",
-  },
-  {
-    name: "Aman Khurana",
-    role: "Growth Manager, SaaS Company",
-    quote:
-      "Results-driven, proactive, and incredibly reliable. The kind of partner every growing business needs when speed and quality both matter.",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800",
-  },
 ];
 
-const CARD_OFFSET = 40;
-const SCALE_STEP = 0.06;
-const SWIPE_THRESHOLD = 120;
+const CARD_OFFSET = 32;
+const SCALE_STEP = 0.05;
+const SWIPE_THRESHOLD = 100;
 
 const Testimonial = () => {
   const [index, setIndex] = useState(0);
@@ -73,20 +49,20 @@ const Testimonial = () => {
   }, []);
 
   return (
-    <section className="bg-black text-white py-32 relative overflow-hidden">
+    <section className="bg-black text-white py-20 sm:py-28 relative overflow-hidden">
       {/* Heading */}
-      <div className="text-center mb-20">
-        <h2 className="text-6xl italic font-light">
+      <div className="text-center mb-12 sm:mb-20 px-4">
+        <h2 className="text-3xl sm:text-5xl lg:text-6xl italic font-light glow-text">
           Hear <span className="italic">from</span> our partners
         </h2>
-        <p className="text-gray-400 mt-3">
+        <p className="text-gray-400 mt-3 text-sm sm:text-base">
           With over 60 clients served, here's what they have to say
         </p>
       </div>
 
-      {/* Perspective wrapper */}
+      {/* Cards */}
       <div
-        className="relative h-[420px] flex justify-center items-center"
+        className="relative h-[520px] sm:h-[460px] lg:h-[420px] flex justify-center items-center px-4"
         style={{ perspective: 1200 }}
       >
         {[0, 1, 2].map((stackIndex) => {
@@ -98,7 +74,7 @@ const Testimonial = () => {
               key={`${index}-${stackIndex}`}
               drag={stackIndex === 0 ? "x" : false}
               dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.2}
+              dragElastic={0.25}
               onDragEnd={(e, info) => {
                 if (info.offset.x < -SWIPE_THRESHOLD) paginate(1);
                 if (info.offset.x > SWIPE_THRESHOLD) paginate(-1);
@@ -106,19 +82,19 @@ const Testimonial = () => {
               animate={{
                 scale: 1 - stackIndex * SCALE_STEP,
                 y: stackIndex * CARD_OFFSET,
-                rotateY: stackIndex === 0 ? 0 : -8,
-                opacity: stackIndex === 0 ? 1 : 0.75,
+                rotateY: stackIndex === 0 ? 0 : -6,
+                opacity: stackIndex === 0 ? 1 : 0.8,
               }}
               transition={{
-                duration: 0.5,
+                duration: 0.45,
                 ease: [0.4, 0, 0.2, 1],
               }}
-              className="absolute w-full max-w-5xl"
+              className="absolute w-full max-w-4xl"
               style={{ zIndex: 10 - stackIndex }}
             >
-              {/* Glass Card */}
+              {/* Card */}
               <div
-                className="flex flex-col md:flex-row gap-10 p-8 rounded-2xl"
+                className="flex flex-col md:flex-row gap-6 sm:gap-8 p-6 sm:p-8 rounded-2xl"
                 style={{
                   background: "rgba(15,15,15,0.6)",
                   backdropFilter: "blur(20px)",
@@ -133,18 +109,18 @@ const Testimonial = () => {
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="rounded-xl object-cover w-full h-[300px]"
+                    className="rounded-xl object-cover w-full h-[220px] sm:h-[260px] md:h-[300px]"
                     draggable={false}
                   />
                 </div>
 
-                {/* Content */}
+                {/* Text */}
                 <div className="w-full md:w-2/3">
-                  <p className="text-lg text-gray-200 leading-relaxed mb-6">
+                  <p className="text-sm sm:text-base lg:text-lg text-gray-200 leading-relaxed mb-5">
                     “{testimonial.quote}”
                   </p>
 
-                  <div className="mt-6">
+                  <div>
                     <p className="font-semibold">{testimonial.name}</p>
                     <p className="text-sm text-gray-400">
                       {testimonial.role}
@@ -157,18 +133,42 @@ const Testimonial = () => {
         })}
       </div>
 
-      {/* Extreme Left Arrow */}
+      {/* Left Arrow */}
       <button
         onClick={() => paginate(-1)}
-        className="absolute left-6 md:left-10 top-[60%] -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition"
+        className="
+          absolute left-3 sm:left-6 lg:left-10
+          top-[60%] -translate-y-1/2
+          z-50
+          flex items-center justify-center
+          w-10 h-10 sm:w-12 sm:h-12
+          rounded-full
+          bg-white/10 backdrop-blur-xl
+          border border-white/20
+          hover:bg-white/20
+          active:scale-95
+          transition
+        "
       >
         ←
       </button>
 
-      {/* Extreme Right Arrow */}
+      {/* Right Arrow */}
       <button
         onClick={() => paginate(1)}
-        className="absolute right-6 md:right-10 top-[60%] -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition"
+        className="
+          absolute right-3 sm:right-6 lg:right-10
+          top-[60%] -translate-y-1/2
+          z-50
+          flex items-center justify-center
+          w-10 h-10 sm:w-12 sm:h-12
+          rounded-full
+          bg-white/10 backdrop-blur-xl
+          border border-white/20
+          hover:bg-white/20
+          active:scale-95
+          transition
+        "
       >
         →
       </button>

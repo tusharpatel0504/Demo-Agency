@@ -8,6 +8,7 @@ import StickyCards from '../component/StickyCards'
 import Project from '../component/Project'
 import Testimonial from '../component/Testimonial'
 import Contact from '../component/Contact'
+import OurServices from '../component/Ourservices'
 // import ScrollSection from '../component/ScrollSection'
 
 
@@ -52,9 +53,12 @@ const HomePage = () => {
               </GotBackground>
             </div>
           </section>
-          <div id="stats">
-            <StickyCards />
-          </div>
+           <div className='hidden lg:block'>
+              <StickyCards />
+            </div>
+            <div className='block lg:hidden'>
+              <OurServices />
+            </div>
           <div id="projects">
             <Project />
           </div>
@@ -64,6 +68,7 @@ const HomePage = () => {
           <div id="contact">
             <Contact/>
           </div>
+         
         </div>
       </div>
     </div>

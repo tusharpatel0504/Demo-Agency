@@ -120,7 +120,7 @@ export default function StickyCards() {
       <section className="sticky-section h-screen flex items-center justify-center relative">
         <h1
           ref={stickyHeaderRef}
-          className="absolute top-[18%] text-6xl italic font-light opacity-0"
+          className="absolute top-[18%] text-6xl italic font-light opacity-0 glow-text"
         >
           What we Offer
         </h1>
@@ -180,8 +180,8 @@ function Card({ id, img, title, desc, color }) {
         className={`absolute inset-0 backface-hidden rotate-y-180 flex flex-col justify-center items-start gap-3 p-8 ${color}`}
       >
         <div>
-          <h3 className="text-3xl font-medium leading-tight">{title}</h3>
-          <p className="text-base leading-relaxed opacity-80 max-w-[83%]">{desc}</p>
+          <h3 className="text-3xl font-medium leading-tight glow-text">{title}</h3>
+          <p className="text-base leading-relaxed opacity-80 max-w-[83%] glow-text">{desc}</p>
         </div>
       </div>
     </div>
