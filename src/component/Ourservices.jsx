@@ -2,24 +2,25 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const services = [
-  {
-    title: "Going Zero to One",
-    desc:
-      "If you're navigating a new business unit or a new venture entirely, or breaking into a new market.",
-    theme: "light",
-  },
-  {
-    title: "Scaling from One to N",
-    desc:
-      "If you’ve achieved Product/Service Market Fit and are looking to scale your business to new heights.",
-    theme: "red",
-  },
-  {
-    title: "Need Quick Solutions",
-    desc:
-      "If you know exactly what you want and need a team that can step in and help you quickly.",
-    theme: "dark",
-  },
+ {
+  title: "Web Development",
+  desc:
+    "High-performance, scalable websites built with modern technologies, tailored to your business goals.",
+  theme: "light",
+},
+{
+  title: "App Development",
+  desc:
+    "End-to-end mobile and web application development, from concept to deployment and long-term scaling.",
+  theme: "red",
+},
+{
+  title: "UI / UX Design",
+  desc:
+    "User-centric interface and experience design that prioritizes clarity, usability, and conversion.",
+  theme: "dark",
+},
+
 ];
 
 const themeStyles = {

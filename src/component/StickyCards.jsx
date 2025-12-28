@@ -129,29 +129,30 @@ export default function StickyCards() {
           ref={cardContainerRef}
           className="flex w-[75%] perspective-1000 translate-y-24"
         >
-          <Card
-            id="card-1"
-            img="/PrimaryLeft.png"
-            title="Going Zero to One"
-            desc="If you're navigating a new business unit or a new venture entirely, or breaking into a new market"
-            color="bg-neutral-300 text-black"
-          />
+         <Card
+  id="card-1"
+  img="/PrimaryLeft.png"
+  title="Web Development"
+  desc="High-performance, scalable websites built with modern technologies, tailored to your business goals."
+  color="bg-neutral-300 text-black"
+/>
 
-          <Card
-            id="card-2"
-            img="/PrimaryC.png"
-            title="Scaling from One to N"
-            desc="If you’ve achieved Product/Service Market Fit and are looking to scale your business to new heights"
-            color="bg-red-700 text-white"
-          />
+<Card
+  id="card-2"
+  img="/PrimaryC.png"
+  title="App Development"
+  desc="End-to-end mobile and web application development, from concept to deployment and scaling."
+  color="bg-red-700 text-white"
+/>
 
-          <Card
-            id="card-3"
-            img="/primaryR.png"
-            title="Need Quick Solutions"
-            desc="If you know exactly what you want and need a team that can step in and help you quickly"
-            color="bg-neutral-900 text-white"
-          />
+<Card
+  id="card-3"
+  img="/primaryR.png"
+  title="UI / UX Design"
+  desc="Intuitive, user-centric design experiences that balance aesthetics, usability, and conversion."
+  color="bg-neutral-900 text-white"
+/>
+
         </div>
       </section>
     </main>
