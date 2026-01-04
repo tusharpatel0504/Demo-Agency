@@ -52,10 +52,11 @@ const Project = () => {
       {/* Header */}
       <div className="text-center mb-14 sm:mb-20">
         <h1 className="text-3xl sm:text-5xl lg:text-6xl italic font-light mb-4 glow-text">
-          Our projects
+          Projects
         </h1>
         <p className="text-gray-400 max-w-xl mx-auto text-sm sm:text-base glow-text">
-          We help you achieve more at every stage of business growth
+          A curated selection of projects showcasing my approach to
+          problem-solving, design, and development.
         </p>
       </div>
 

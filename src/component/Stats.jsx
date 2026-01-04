@@ -16,16 +16,17 @@ const Stats = () => {
         {/* Stat 1 */}
         <div className="flex flex-col sm:flex-row flex-1 gap-4 sm:gap-6">
           <div className="text-5xl sm:text-6xl lg:text-7xl font-light text-neutral-300 leading-none glow-text">
-            06+
+            02
           </div>
           <div>
-            <h4 className="mb-3 text-base sm:text-lg font-medium text-white glow-text">
-              Years of Experience
+            <h4 className="mb-3 text-base sm:text-lg font-medium text-white glow-text text-left">
+              Internships Completed
             </h4>
-            <p className="text-sm leading-relaxed text-neutral-400">
-              Over six years of building, shipping, and refining digital
-              products. I’ve worked end-to-end across design, development, and
-              strategy — focusing on clarity, performance, and real outcomes.
+            <p className="text-sm leading-relaxed text-neutral-400 text-left">
+              Gained hands-on industry experience by contributing to real-world
+              development workflows, collaborating with teams, and working on
+              production-ready codebases while learning professional engineering
+              practices.
             </p>
           </div>
         </div>
@@ -36,16 +37,16 @@ const Stats = () => {
         {/* Stat 2 */}
         <div className="flex flex-col sm:flex-row flex-1 gap-4 sm:gap-6">
           <div className="text-5xl sm:text-6xl lg:text-7xl font-light text-neutral-300 leading-none glow-text">
-            10+
+            05+
           </div>
           <div>
-            <h4 className="mb-3 text-base sm:text-lg font-medium text-white glow-text">
-              Projects Delivered
+            <h4 className="mb-3 text-base sm:text-lg font-medium text-white glow-text text-left">
+              Projects Built
             </h4>
-            <p className="text-sm leading-relaxed text-neutral-400">
-              From fast MVPs to polished production builds, I’ve delivered
-              projects that scale, ship on time, and solve real problems — not
-              just look good.
+            <p className="text-sm leading-relaxed text-neutral-400 text-left">
+              Designed and developed multiple full-stack projects from concept
+              to deployment, focusing on usability, performance, clean
+              architecture, and writing maintainable code for real use cases.
             </p>
           </div>
         </div>
@@ -56,16 +57,16 @@ const Stats = () => {
         {/* Stat 3 */}
         <div className="flex flex-col sm:flex-row flex-1 gap-4 sm:gap-6">
           <div className="text-5xl sm:text-6xl lg:text-7xl font-light text-neutral-300 leading-none glow-text">
-            4+
+            03
           </div>
           <div>
-            <h4 className="mb-3 text-base sm:text-lg font-medium text-white glow-text">
-              Industries Impacted
+            <h4 className="mb-3 text-base sm:text-lg font-medium text-white glow-text text-left">
+              Projects Deployed & Adopted
             </h4>
-            <p className="text-sm leading-relaxed text-neutral-400">
-              I’ve worked across AI, fintech, fashion, gaming, education, and
-              manufacturing — bringing insights from different domains to build
-              smarter, more adaptable products.
+            <p className="text-sm leading-relaxed text-neutral-400 text-left">
+              Successfully delivered projects adopted by my institute and
+              deployed on official college servers, actively supporting academic
+              processes through reliable, production-grade software systems.
             </p>
           </div>
         </div>

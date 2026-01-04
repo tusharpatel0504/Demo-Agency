@@ -9,8 +9,8 @@ const Contact = () => {
           Get in <span className="italic">touch</span>
         </h2>
         <p className="text-gray-400 mt-4 max-w-xl mx-auto text-sm sm:text-base glow-text">
-          Whether you have a project in mind, a question, or just want to say hello —
-          we’d love to hear from you.
+          Whether you have a project in mind, a question, or are looking to hire a
+          developer, I’d love to hear from you.
         </p>
       </div>
 
