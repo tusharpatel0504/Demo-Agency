@@ -16,7 +16,7 @@ const Stats = () => {
         {/* Stat 1 */}
         <div className="flex flex-col sm:flex-row flex-1 gap-4 sm:gap-6">
           <div className="text-5xl sm:text-6xl lg:text-7xl font-light text-neutral-300 leading-none glow-text">
-            02
+            03
           </div>
           <div>
             <h4 className="mb-3 text-base sm:text-lg font-medium text-white glow-text text-left">
@@ -57,14 +57,14 @@ const Stats = () => {
         {/* Stat 3 */}
         <div className="flex flex-col sm:flex-row flex-1 gap-4 sm:gap-6">
           <div className="text-5xl sm:text-6xl lg:text-7xl font-light text-neutral-300 leading-none glow-text">
-            03
+            04
           </div>
           <div>
             <h4 className="mb-3 text-base sm:text-lg font-medium text-white glow-text text-left">
               Projects Deployed & Adopted
             </h4>
             <p className="text-sm leading-relaxed text-neutral-400 text-left">
-              Successfully delivered projects adopted by my institute and
+              Successfully delivered projects adopted by IIIT Bhagalpur and
               deployed on official college servers, actively supporting academic
               processes through reliable, production-grade software systems.
             </p>

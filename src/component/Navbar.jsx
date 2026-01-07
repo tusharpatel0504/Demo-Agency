@@ -79,22 +79,22 @@ export default function Navbar() {
         {/* Desktop Links */}
         <ul className="hidden md:flex gap-8 text-sm text-gray-300">
           <li
-            onClick={() => scrollToSection("services")}
+            onClick={() => scrollToSection("about")}
             className="hover:text-white font-semibold cursor-pointer transition glow-text"
           >
-            Services
+            About
           </li>
           <li
             onClick={() => scrollToSection("projects")}
             className="hover:text-white font-semibold cursor-pointer transition glow-text"
           >
-            Featured Work
+            Project
           </li>
           <li
             onClick={() => scrollToSection("testimonials")}
             className="hover:text-white font-semibold cursor-pointer transition glow-text"
           >
-            Reviews
+            Experience
           </li>
         </ul>
 

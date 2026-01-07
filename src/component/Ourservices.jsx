@@ -3,21 +3,21 @@ import { motion } from "framer-motion";
 
 const services = [
  {
-  title: "Web Development",
+  title: "Smart India Hackathon (SIH)",
   desc:
-    "High-performance, scalable websites built with modern technologies, tailored to your business goals.",
+    "Secured 3rd position among 60 teams in internal college rounds by developing an innovative, problem-solving prototype.",
   theme: "light",
 },
 {
-  title: "App Development",
+  title: "Hacktoberfest 2025 Supercontributor",
   desc:
-    "End-to-end mobile and web application development, from concept to deployment and long-term scaling.",
+    "Earned Supercontributor badge by merging 8+ PRs across 7 global open-source projects, raising issues, reviewing CI/CD pipelines, and collaborating with maintainers.",
   theme: "red",
 },
 {
-  title: "UI / UX Design",
+  title: "DSA & Problem Solving",
   desc:
-    "User-centric interface and experience design that prioritizes clarity, usability, and conversion.",
+    "Solved 350+ problems on LeetCode across Easy, Medium, and Hard categories, demonstrating strong consistency and algorithmic thinking. Also a CodeChef 3-Star coder with a peak rating of 1769 in Division 2.",
   theme: "dark",
 },
 
@@ -43,14 +43,14 @@ const themeStyles = {
 
 const OurServices = () => {
   return (
-    <section className="bg-black text-white pb-20 pt-96 sm:py-28 overflow-hidden">
+    <section className="bg-black text-white pb-20 pt-24 sm:py-28 overflow-hidden">
       {/* ================= HEADING (ALWAYS ON TOP) ================= */}
       <div className="text-center mb-14 sm:mb-20 px-4 relative z-20">
         <h2 className="text-3xl sm:text-5xl lg:text-6xl italic font-light">
-        What We <span className="italic">Offer</span>
+        Achievements &  <span className="italic">Recognition</span>
         </h2>
         <p className="text-gray-400 mt-4 text-sm sm:text-base max-w-xl mx-auto">
-          We help you achieve more at every stage of business growth.
+          Recognized for excellence through innovation, impact, and consistent performance.
         </p>
       </div>
 
