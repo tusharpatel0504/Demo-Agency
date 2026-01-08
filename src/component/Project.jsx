@@ -44,6 +44,25 @@ const projects = [
     image: "/esummit.png",
     live: "https://esummit.iiitbh.ac.in",
   },
+  {
+  id: "(04)",
+  title: "Hospital Management System",
+  subtitle: "Full-stack MERN application for hospital operations",
+  description:
+    "Built a full-stack Hospital Management System with role-based access control (Admin, Doctor, Patient), secure authentication, and responsive UI. Features include real-time doctor revenue dashboards, centralized admin management, dynamic slot booking by specialization, and Razorpay payment integration.",
+  tech: [
+    "MongoDB",
+    "Express.js",
+    "ReactJS",
+    "Node.js",
+    "TailwindCSS",
+    "RBAC",
+    "Razorpay",
+  ],
+  image: "/doctor.png",
+  live: "https://doctor-appointment-frontend-ashen.vercel.app/",
+}
+
 ];
 
 const Project = () => {
