@@ -134,16 +134,16 @@ export default function Navbar() {
         <div className="md:hidden mt-4 pt-4 border-t border-white/10">
           <ul className="flex flex-col gap-4 text-sm text-gray-300">
             <li
-              onClick={() => scrollToSection("stats")}
+              onClick={() => scrollToSection("about")}
               className="hover:text-white cursor-pointer"
             >
-              Services
+             About
             </li>
             <li
               onClick={() => scrollToSection("projects")}
               className="hover:text-white cursor-pointer"
             >
-              Featured Work
+             Project
             </li>
             <li
               onClick={() => scrollToSection("testimonials")}
