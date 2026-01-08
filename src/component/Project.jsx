@@ -44,6 +44,22 @@ const projects = [
     image: "/esummit.png",
     live: "https://esummit.iiitbh.ac.in",
   },
+  {
+    id: "(04)",
+    title: "iiit bhagalpur",
+    subtitle: "Official website for IIIT Bhubaneswar’s entrepreneurship summit.",
+    description:
+      "Developed the official website for IIIT Bhubaneswar’s annual entrepreneurship summit with a responsive frontend, real-time updates, and performance optimizations to handle large visitor traffic.",
+    tech: [
+      "ReactJS",
+      "TailwindCSS",
+      "Node.js",
+      "Express",
+      "SEO Optimization",
+    ],
+    image: "/esummit.png",
+    live: "https://esummit.iiitbh.ac.in",
+  },
 ];
 
 const Project = () => {
