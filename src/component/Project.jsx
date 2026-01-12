@@ -31,7 +31,7 @@ const projects = [
   {
     id: "(03)",
     title: "E-Summit Website",
-    subtitle: "Official website for IIIT Bhubaneswar’s entrepreneurship summit.",
+    subtitle: "Official website for IIIT Bhagalpur entrepreneurship summit.",
     description:
       "Developed the official website for IIIT Bhubaneswar’s annual entrepreneurship summit with a responsive frontend, real-time updates, and performance optimizations to handle large visitor traffic.",
     tech: [

@@ -14,7 +14,7 @@ const internships = [
   {
     company: "TIP2TRIP",
     role: "Web Developer Intern and UI/UX Designer",
-    duration: "Jan 2024 – Apr 2024",
+    duration: "May 2025 – August 2024",
     description:
       "Led the end-to-end UI/UX lifecycle by leveraging user research from Google Analytics and Hotjar to design over 10 high-fidelity Figma prototypes, ultimately reducing user drop-off by 25%. I translated these designs into responsive, accessible frontend components while partnering closely with Product Managers to maintain design integrity. This collaborative approach ensured a consistent user experience and a streamlined workflow from initial concept to final launch.",
     image:
