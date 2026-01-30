@@ -9,6 +9,7 @@ import OurServices from '../component/Ourservices'
 import { useRef } from 'react'
 import Skills from '../component/Skills'
 import Internships from '../component/Internships'
+import ProcessTimeline from '../component/ProcessTimeline'
 
 const HomePage = () => {
   const sectionRef = useRef(null)
@@ -55,7 +56,7 @@ const HomePage = () => {
         <section id="testimonials">
           <Internships/>
         </section>
-
+        <ProcessTimeline/>
         {/* Contact */}
         <section id="contact">
           <Contact />
