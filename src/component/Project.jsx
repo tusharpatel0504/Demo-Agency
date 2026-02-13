@@ -2,7 +2,7 @@ import React from "react";
 
 const projects = [
   {
-    id: "(01)",
+    id: "01",
     title: "Enyugma Website",
     subtitle: "Official techno-cultural fest website of IIIT Bhagalpur.",
     description:
@@ -12,7 +12,7 @@ const projects = [
     live: "https://enyugma.iiitbh.ac.in",
   },
   {
-    id: "(02)",
+    id: "02",
     title: "OPCODE Website",
     subtitle: "Open-source platform for collaborative development.",
     description:
@@ -29,7 +29,7 @@ const projects = [
     live: "https://opcode.gymkhana.iiitbh.ac.in/",
   },
   {
-    id: "(03)",
+    id: "03",
     title: "E-Summit Website",
     subtitle: "Official website for IIIT Bhagalpur entrepreneurship summit.",
     description:
@@ -45,7 +45,7 @@ const projects = [
     live: "https://esummit.iiitbh.ac.in",
   },
   {
-  id: "(04)",
+  id: "04",
   title: "Hospital Management System",
   subtitle: "Full-stack MERN application for hospital operations",
   description:
