@@ -51,21 +51,21 @@ const ProcessCard = ({ step, index }) => {
       }}
       className="relative h-[350px] w-full rounded-3xl bg-neutral-900 border border-white/10 p-1 cursor-none group"
     >
-      <div 
+      <div
         style={{ transform: "translateZ(75px)" }}
         className="relative h-full w-full rounded-[22px] bg-neutral-950 p-8 flex flex-col justify-between overflow-hidden"
       >
         {/* Animated Background Gradient */}
-        <div 
-           className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500"
-           style={{
-             background: `radial-gradient(circle at center, ${step.accent} 0%, transparent 70%)`,
-             filter: 'blur(40px)'
-           }}
+        <div
+          className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500"
+          style={{
+            background: `radial-gradient(circle at center, ${step.accent} 0%, transparent 70%)`,
+            filter: 'blur(40px)'
+          }}
         />
 
         <div className="z-10">
-          <div 
+          <div
             className="text-4xl mb-6 inline-block p-4 rounded-2xl bg-white/5 border border-white/10"
             style={{ color: step.accent }}
           >
@@ -97,17 +97,17 @@ const ProcessTimeline = () => {
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
           <div className="max-w-2xl">
             <h2 className="text-5xl md:text-7xl font-extrabold uppercase italic leading-[0.9] tracking-tight">
-  <span className="block text-white drop-shadow-[6px_6px_0_rgba(0,0,0,0.6)]">
-    The <span className="text-neutral-500">Way</span>
-  </span>
+              <span className="block text-white drop-shadow-[6px_6px_0_rgba(0,0,0,0.6)]">
+                The <span className="text-neutral-500">Way</span>
+              </span>
 
-  <span className="block mt-1  text-white relative">
-    I{" "}
-    <span className="relative inline-block px-4 py-1 ml-4  bg-white/10 backdrop-blur-md rounded-lg border border-white/20">
-      Work
-    </span>
-  </span>
-</h2>
+              <span className="block mt-1  text-white relative">
+                I{" "}
+                <span className="relative inline-block px-4 py-1 ml-4  bg-white/10 backdrop-blur-md rounded-lg border border-white/20">
+                  Work
+                </span>
+              </span>
+            </h2>
 
           </div>
           <p className="text-neutral-500 uppercase tracking-widest text-xs font-bold md:mb-4">

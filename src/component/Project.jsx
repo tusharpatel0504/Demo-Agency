@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 const projects = [
   {
@@ -45,25 +45,140 @@ const projects = [
     live: "https://esummit.iiitbh.ac.in",
   },
   {
-  id: "04",
-  title: "Hospital Management System",
-  subtitle: "Full-stack MERN application for hospital operations",
-  description:
-    "Built a full-stack Hospital Management System with role-based access control (Admin, Doctor, Patient), secure authentication, and responsive UI. Features include real-time doctor revenue dashboards, centralized admin management, dynamic slot booking by specialization, and Razorpay payment integration.",
-  tech: [
-    "MongoDB",
-    "Express.js",
-    "ReactJS",
-    "Node.js",
-    "TailwindCSS",
-    "RBAC",
-    "Razorpay",
-  ],
-  image: "/doctor.png",
-  live: "https://doctor-appointment-frontend-ashen.vercel.app/",
-}
-
+    id: "04",
+    title: "Hospital Management System",
+    subtitle: "Full-stack MERN application for hospital operations",
+    description:
+      "Built a full-stack Hospital Management System with role-based access control (Admin, Doctor, Patient), secure authentication, and responsive UI. Features include real-time doctor revenue dashboards, centralized admin management, dynamic slot booking by specialization, and Razorpay payment integration.",
+    tech: [
+      "MongoDB",
+      "Express.js",
+      "ReactJS",
+      "Node.js",
+      "TailwindCSS",
+      "RBAC",
+      "Razorpay",
+    ],
+    image: "/doctor.png",
+    live: "https://doctor-appointment-frontend-ashen.vercel.app/",
+  },
 ];
+
+const ProjectRow = memo(({ project, isLast }) => {
+  return (
+    <div>
+      <div
+        className="
+          group
+          grid
+          grid-cols-1
+          lg:grid-cols-[1.4fr_1.4fr_1fr]
+          gap-10 lg:gap-16
+          py-14 lg:py-18
+          items-start
+        "
+        style={{ contentVisibility: "auto", containIntrinsicSize: "0 400px" }}
+      >
+        {/* Image – FIRST on mobile */}
+        <a
+          href={project.live}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            order-1 lg:order-3
+            w-full
+            max-w-md
+            lg:w-96
+            mx-auto
+            rounded-xl
+            overflow-hidden
+            transition-transform duration-300 ease-out
+            group-hover:scale-[1.03]
+            group-hover:-translate-y-1
+            shadow-lg
+            will-change-transform
+            block
+          "
+        >
+          <img
+            src={project.image}
+            alt={project.title}
+            className="h-full w-full object-cover aspect-[16/10] bg-neutral-900"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+
+        {/* Left – Text */}
+        <div className="order-2 lg:order-1">
+          <span className="text-gray-500 block mb-3 text-sm font-mono">
+            {project.id}
+          </span>
+
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium mb-2 transition-colors duration-200 group-hover:text-white glow-text">
+            {project.title}
+          </h2>
+
+          <p className="text-gray-400 text-sm mb-4 lg:mb-6">
+            {project.subtitle}
+          </p>
+
+          <p className="text-gray-400 text-sm leading-relaxed max-w-lg transition-colors duration-200 group-hover:text-gray-300">
+            {project.description}
+          </p>
+
+          <a
+            href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              inline-flex items-center gap-2 mt-6 text-sm text-white
+              border-b border-transparent
+              transition-all duration-200
+              hover:border-white
+            "
+          >
+            View Live
+            <span className="transition-transform duration-200 group-hover:translate-x-1">
+              →
+            </span>
+          </a>
+        </div>
+
+        {/* Middle – Tech Stack */}
+        <div className="order-3 lg:order-2 lg:pt-12">
+          <h4 className="text-xs sm:text-sm uppercase tracking-widest text-gray-500 mb-4 font-mono">
+            Tech Stack
+          </h4>
+
+          <ul className="flex flex-wrap gap-2 sm:gap-3">
+            {project.tech.map((tech, i) => (
+              <li
+                key={i}
+                className="
+                  px-3 py-1
+                  border border-neutral-800
+                  bg-white/[0.02]
+                  rounded-full
+                  text-xs text-gray-300
+                  transition-colors duration-200
+                  group-hover:border-neutral-600
+                "
+              >
+                {tech}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Divider */}
+      {!isLast && <div className="h-px bg-neutral-800/80" />}
+    </div>
+  );
+});
+
+ProjectRow.displayName = "ProjectRow";
 
 const Project = () => {
   return (
@@ -73,123 +188,21 @@ const Project = () => {
         <h1 className="text-3xl sm:text-5xl lg:text-6xl italic font-light mb-4 glow-text">
           Projects
         </h1>
-        <p className="text-gray-400 max-w-xl mx-auto text-sm sm:text-base glow-text">
+        <p className="text-gray-400 max-w-xl mx-auto text-sm sm:text-base">
           A curated selection of projects showcasing my approach to
           problem-solving, design, and development.
         </p>
       </div>
 
       {projects.map((project, index) => (
-        <div key={project.id}>
-          {/* PROJECT ROW */}
-          <div
-            className="
-              group
-              grid
-              grid-cols-1
-              lg:grid-cols-[1.4fr_1.4fr_1fr]
-              gap-10 lg:gap-16
-              py-16 lg:py-20
-              items-start
-            "
-          >
-            {/* Image – FIRST on mobile */}
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                order-1 lg:order-3
-                w-full
-                max-w-md
-                lg:w-96
-                mx-auto
-                rounded-xl
-                overflow-hidden
-                transition-transform duration-700
-                ease-[cubic-bezier(0.16,1,0.3,1)]
-                group-hover:scale-105
-                group-hover:-translate-y-1
-                group-hover:shadow-2xl
-              "
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="h-full w-full object-cover"
-              />
-            </a>
-
-            {/* Left – Text */}
-            <div className="order-2 lg:order-1">
-              <span className="text-gray-500 block mb-3 text-sm">
-                {project.id}
-              </span>
-
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium mb-2 transition-colors duration-300 group-hover:text-white glow-text">
-                {project.title}
-              </h2>
-
-              <p className="text-gray-400 text-sm mb-4 lg:mb-6">
-                {project.subtitle}
-              </p>
-
-              <p className="text-gray-400 text-sm leading-relaxed max-w-lg transition-colors duration-300 group-hover:text-gray-300">
-                {project.description}
-              </p>
-
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                  inline-flex items-center gap-2 mt-6 text-sm text-white
-                  border-b border-transparent
-                  transition-all duration-300
-                  hover:border-white
-                "
-              >
-                View Live
-                <span className="transition-transform duration-300 group-hover:translate-x-1">
-                  →
-                </span>
-              </a>
-            </div>
-
-            {/* Middle – Tech Stack */}
-            <div className="order-3 lg:order-2 lg:pt-12">
-              <h4 className="text-xs sm:text-sm uppercase tracking-widest text-gray-500 mb-4">
-                Tech Stack
-              </h4>
-
-              <ul className="flex flex-wrap gap-2 sm:gap-3">
-                {project.tech.map((tech, i) => (
-                  <li
-                    key={i}
-                    className="
-                      px-3 py-1
-                      border border-neutral-700
-                      rounded-full
-                      text-xs text-gray-300
-                      transition-colors duration-300
-                      group-hover:border-neutral-500
-                    "
-                  >
-                    {tech}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Divider */}
-          {index !== projects.length - 1 && (
-            <div className="h-px bg-neutral-800" />
-          )}
-        </div>
+        <ProjectRow
+          key={project.id}
+          project={project}
+          isLast={index === projects.length - 1}
+        />
       ))}
     </section>
   );
 };
 
-export default Project;
+export default memo(Project);

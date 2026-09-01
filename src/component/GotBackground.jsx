@@ -22,14 +22,16 @@ const GotBackground = ({ children }) => {
           relative z-10
           flex flex-col
           items-center
-          justify-center
+          justify-between
           min-h-screen
+          pt-8 sm:pt-12 md:pt-14
+          pb-6 sm:pb-8
           px-4 sm:px-6 lg:px-8
           text-center
         "
       >
         {/* Hero Content */}
-        <div className="w-full max-w-6xl">
+        <div className="w-full max-w-6xl my-auto">
           {children}
         </div>
 

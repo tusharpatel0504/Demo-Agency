@@ -1,19 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 
 export default function Navbar() {
-  const [style, setStyle] = useState({
-    maxWidth: "1100px",
-    backgroundColor: "rgba(30,30,30,0.85)",
-  });
-
+  const navRef = useRef(null);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const hero = document.getElementById("hero");
+    const nav = navRef.current;
+    if (!hero || !nav) return;
 
     const handleScroll = () => {
-      if (!hero) return;
-
       const heroHeight = hero.offsetHeight;
       const scrollY = window.scrollY;
 
@@ -26,13 +22,11 @@ export default function Navbar() {
 
       const maxOpacity = 0.85;
       const minOpacity = 0.25;
-      const opacity =
-        maxOpacity - (maxOpacity - minOpacity) * progress;
+      const opacity = maxOpacity - (maxOpacity - minOpacity) * progress;
 
-      setStyle({
-        maxWidth: `${width}px`,
-        backgroundColor: `rgba(30,30,30,${opacity})`,
-      });
+      // Direct DOM mutation — bypasses React reconciliation entirely
+      nav.style.maxWidth = `${width}px`;
+      nav.style.backgroundColor = `rgba(30,30,30,${opacity})`;
     };
 
     handleScroll();
@@ -40,7 +34,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = useCallback((sectionId) => {
     setOpen(false);
     const el = document.getElementById(sectionId);
     if (!el) return;
@@ -53,18 +47,21 @@ export default function Navbar() {
       top: offsetPosition,
       behavior: "smooth",
     });
-  };
+  }, []);
 
   return (
     <nav
-      style={style}
+      ref={navRef}
+      style={{
+        maxWidth: "1100px",
+        backgroundColor: "rgba(30,30,30,0.85)",
+      }}
       className="
         fixed top-4 left-1/2 -translate-x-1/2 z-50
         w-[calc(100%-2rem)]
         backdrop-blur-xl
-        transition-all duration-300 ease-out
+        transition-[max-width,background-color] duration-300 ease-out
         rounded-xl px-4 py-3
-        will-change-[max-width,background-color]
       "
     >
       <div className="flex items-center justify-between">

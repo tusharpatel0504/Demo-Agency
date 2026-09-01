@@ -1,61 +1,46 @@
-// import { motion, useScroll, useTransform } from "framer-motion";
-
-// const text =
-//   "I’m Tushar Patel an aspiring full-stack software developer learning to build scalable web applications and intuitive UI/UX experiences, with a strong focus on fundamentals, clarity, and continuous growth.";
-
-// export default function ScrollLitHeading({ sectionRef }) {
-//   const { scrollYProgress } = useScroll({
-//     target: sectionRef,
-//     offset: ["start start", "end end"],
-//   });
-
-//   return (
-//     <motion.h1
-//       className="
-//         max-w-6xl
-//         mx-auto
-//         text-center
-//         text-2xl
-//         sm:text-3xl
-//         md:text-4xl
-//         lg:text-5xl
-//         xl:text-6xl
-//         italic
-//         tracking-normal
-//         leading-snug
-//         md:leading-tight
-//         flex
-//         flex-wrap
-//         justify-center
-//         whitespace-normal
-//         break-normal
-//         hyphens-none
-//         pb-16
-//         pt-20
-//       "
-//     >
-//       {text.split("").map((char, i, arr) => {
-//         const color = useTransform(
-//           scrollYProgress,
-//           [i / arr.length, (i + 1) / arr.length],
-//           ["#484745", "#DDDAD4"]
-//         );
-
-//         return (
-//           <motion.span key={i} style={{ color }}>
-//             {char === " " ? "\u00A0" : char}
-//           </motion.span>
-//         );
-//       })}
-//     </motion.h1>
-//   );
-// }
-
-
+import { memo, useMemo } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const text =
-  "I’m Tushar Patel an aspiring full-stack software developer learning to build scalable web applications and intuitive UI/UX experiences, with a strong focus on fundamentals, clarity, and continuous growth.";
+  "I build software institutions bet on not side projects that stay side projects. My alumni platform for IIIT Bhagalpur beat out other proposals across three rounds of review and now runs official authentication for 1,000+ users; it's one of four platforms of mine adopted into live college infrastructure. I've also shipped a role-based hospital booking system with AI-assisted triage, interned across two teams shipping production MERN code, and taken 1st at Congithon and 3rd at Smart India Hackathon (internal) against 60+ competing teams. I build for people who'll actually depend on it and that's the only work I want to keep doing.";
+
+// Pre-compute the character layout once (module-level, zero cost on re-render)
+const totalLen = text.length;
+const words = text.split(" ");
+
+function buildCharData() {
+  const chars = [];
+  let globalIndex = 0;
+
+  words.forEach((word, wordIndex) => {
+    const wordChars = word.split("").map((char) => ({
+      char,
+      globalIndex: globalIndex++,
+      wordIndex,
+    }));
+    chars.push({ wordIndex, wordChars, isLast: wordIndex === words.length - 1 });
+    // Account for the space between words
+    if (wordIndex < words.length - 1) globalIndex++;
+  });
+
+  return chars;
+}
+
+const charData = buildCharData();
+
+// Each character gets its own component so useTransform is called
+// at the top level of a component (not inside a .map callback)
+const CharSpan = memo(({ globalIndex, char, scrollYProgress }) => {
+  const color = useTransform(
+    scrollYProgress,
+    [globalIndex / totalLen, (globalIndex + 1) / totalLen],
+    ["#484745", "#DDDAD4"]
+  );
+
+  return <motion.span style={{ color }}>{char}</motion.span>;
+});
+
+CharSpan.displayName = "CharSpan";
 
 export default function ScrollLitHeading({ sectionRef }) {
   const { scrollYProgress } = useScroll({
@@ -66,56 +51,42 @@ export default function ScrollLitHeading({ sectionRef }) {
   return (
     <motion.h1
       className="
-        max-w-6xl
+        max-w-5xl
         mx-auto
         text-center
-        text-2xl
-        sm:text-3xl
-        md:text-4xl
-        lg:text-5xl
-        xl:text-6xl
+        text-sm
+        sm:text-base
+        md:text-lg
+        lg:text-[1.35rem]
+        xl:text-[1.55rem]
+        font-light
         italic
         tracking-normal
-        leading-snug
-        md:leading-tight
+        leading-relaxed
+        md:leading-relaxed
         flex
         flex-wrap
         justify-center
-        pb-16
-        pt-20
+        py-2
+        sm:py-4
       "
     >
-      {text.split(" ").map((word, wordIndex, words) => (
+      {charData.map((wordGroup) => (
         <span
-          key={wordIndex}
+          key={wordGroup.wordIndex}
           className="whitespace-nowrap inline-flex"
         >
-          {word.split("").map((char, charIndex) => {
-            const globalIndex =
-              words.slice(0, wordIndex).join(" ").length +
-              (wordIndex > 0 ? 1 : 0) +
-              charIndex;
-
-            const color = useTransform(
-              scrollYProgress,
-              [
-                globalIndex / text.length,
-                (globalIndex + 1) / text.length,
-              ],
-              ["#484745", "#DDDAD4"]
-            );
-
-            return (
-              <motion.span key={charIndex} style={{ color }}>
-                {char}
-              </motion.span>
-            );
-          })}
+          {wordGroup.wordChars.map((c) => (
+            <CharSpan
+              key={c.globalIndex}
+              globalIndex={c.globalIndex}
+              char={c.char}
+              scrollYProgress={scrollYProgress}
+            />
+          ))}
 
           {/* Space after each word except last */}
-          {wordIndex !== words.length - 1 && (
-            <span>&nbsp;</span>
-          )}
+          {!wordGroup.isLast && <span>&nbsp;</span>}
         </span>
       ))}
     </motion.h1>
